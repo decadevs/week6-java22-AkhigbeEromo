@@ -3,8 +3,9 @@ package services;
 import models.Book;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface BookService {
 
-    Book checkBook(String nameOfBook, List<Book> books);
+    Optional<Book> checkBook(String nameOfBook, List<Book> books);
 }

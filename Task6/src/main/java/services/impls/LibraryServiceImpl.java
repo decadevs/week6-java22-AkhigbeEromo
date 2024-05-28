@@ -29,31 +29,40 @@ public class LibraryServiceImpl implements LibraryService {
 
     @Override
     public String giveBookByPriority(String book, List<Book> books) {
-        String result ="";
-            for(Person p:libraryUsersOnPriorityQueue){
-                if(bookService.checkBook(book,books) != null) {
-                    System.out.println(p.getName() + " has borrowed " + book);
-                    result = book;
-                }else {
-                    System.out.println(p.getName()+ " cannot borrow "+ book+ " because it is not available");
+        libraryUsersOnPriorityQueue.forEach(
+                p ->{
+                    if(bookService.checkBook(book, books).isPresent()){
+                        System.out.println(p.getName()+ " has borrowed " + book);
+                    }else{
+                        System.out.println(p.getName()+ " cannot borrow "+ book+ " because it is not available");
+                    }
                 }
-            }
-            return result;
+        );
+        return libraryUsersOnPriorityQueue.stream()
+                .filter(p -> bookService.checkBook(book, books).isPresent())
+                .map(p-> book )
+                .findFirst()
+                .orElse("");
+
 
     }
 
     @Override
     public String giveBookByOrder(String book, List<Book>books) {
-        String result ="";
-        for(Person p:libraryUsersOnQueue){
-            if(bookService.checkBook(book,books) != null) {
-                System.out.println(p.getName() + " has borrowed " + book);
-                result = book;
-            }else {
-                System.out.println(p.getName()+ " cannot borrow "+ book+ " because it is not available");
-            }
-        }
-        return result;
+        libraryUsersOnQueue.forEach(
+                p ->{
+                    if(bookService.checkBook(book, books).isPresent()){
+                        System.out.println(p.getName()+ " has borrowed " + book);
+                    }else{
+                        System.out.println(p.getName()+ " cannot borrow "+ book+ " because it is not available");
+                    }
+                }
+        );
+        return libraryUsersOnPriorityQueue.stream()
+                .filter(p -> bookService.checkBook(book, books).isPresent())
+                .map(p-> book )
+                .findFirst()
+                .orElse("");
     }
 
     @Override

@@ -1,19 +1,20 @@
 package services.impls;
 
-import models.Book;
 import models.Library;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 class BookServiceImplTest {
-BookServiceImpl bookService = new BookServiceImpl();
+    BookServiceImpl bookService = new BookServiceImpl();
+
     @Test
     void checkBook_ifNull() {
-        assertNull(bookService.checkBook("Dangerously", Library.getBookShelf()));
+            assertNull(bookService.checkBook("Dangerously", Library.getBookShelf()));
     }
     @Test
     void checkBook_ifNotNull() {
-        assertNotNull(bookService.checkBook("Things fall Apart", Library.getBookShelf()));
+        assertNotNull(bookService.checkBook("Living Dangerously", Library.getBookShelf()));
     }
 
 }
