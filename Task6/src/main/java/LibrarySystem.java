@@ -22,10 +22,6 @@ public class LibrarySystem {
         libraryService.addLibraryUsersToQueue(juniorStudent);
 
 
-        libraryService.addLibraryUsersToPriorityQueue(seniorStudent);
-        libraryService.addLibraryUsersToPriorityQueue(teacher);
-        libraryService.addLibraryUsersToPriorityQueue(juniorStudent);
-
         System.out.println("#####################################################");
         System.out.println("GIVING BOOK BY PRIORITY");
         libraryService.giveBookByPriority("Living Dangerously", Library.getBookShelf());

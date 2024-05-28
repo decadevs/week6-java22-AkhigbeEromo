@@ -1,14 +1,11 @@
 package models;
 
-import services.impls.RoleComparatorImpl;
-
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.PriorityQueue;
 
 public class Library {
-    public static List<Person> libraryUsersOnQueue= new ArrayList<>();
-    public static PriorityQueue<Person> libraryUsersOnPriorityQueue =new PriorityQueue<>(new RoleComparatorImpl());
+    public static List<Person> libraryUsersOnQueue= new LinkedList<>();
     public  static List<Book> bookshelf = new ArrayList<>();
 
     public static List<Book> getBookShelf(){

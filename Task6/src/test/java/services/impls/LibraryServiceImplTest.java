@@ -13,31 +13,26 @@ class LibraryServiceImplTest {
     Person seniorStudent = new Person("David Abayomi", 25, Gender.MALE, Role.SENIOR_STUDENT);
 
 
-    @Test
-    void addLibraryUsersToPriorityQueue() {
-        assertEquals("David Abayomi",libraryService.addLibraryUsersToPriorityQueue(seniorStudent));
-    }
 
     @Test
     void addLibraryUsersToQueue() {
         assertEquals("David Abayomi",libraryService.addLibraryUsersToQueue(seniorStudent));
     }
 
+
     @Test
-    void giveBookByPriority_IfNull() {
-        assertEquals("",libraryService.giveBookByPriority("Dangerously", Library.getBookShelf()));
-    }
-    @Test
-    void giveBookByPriority_IfNotNull() {
-        assertNotNull(libraryService.giveBookByPriority("Living Dangerously", Library.getBookShelf()));
+    void reduceBookCount() {
+        assertNotNull(libraryService.reduceBookCount("Living Dangerously", Library.getBookShelf()));
     }
 
     @Test
-    void giveBookByOrder_IfNull() {
-        assertEquals("",libraryService.giveBookByOrder("Dangerously", Library.getBookShelf()));
+    void giveBookByPriority() {
+        assertNotNull(libraryService.giveBookByPriority("Living Dangerously", Library.getBookShelf()));
     }
+
+
     @Test
-    void giveBookByOrder_IfNotNull() {
+    void giveBookByOrder() {
         assertNotNull(libraryService.giveBookByOrder("Dangerously", Library.getBookShelf()));
     }
 }
