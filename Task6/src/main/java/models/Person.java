@@ -20,15 +20,6 @@ public class Person {
         return name;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public Gender getGender() {
-        return gender;
-    }
-
-
     public Role getRole() {
         return role;
     }

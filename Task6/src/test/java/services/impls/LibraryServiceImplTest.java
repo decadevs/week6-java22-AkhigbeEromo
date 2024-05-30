@@ -27,12 +27,12 @@ class LibraryServiceImplTest {
 
     @Test
     void giveBookByPriority() {
-        assertNotNull(libraryService.giveBookByPriority("Living Dangerously", Library.getBookShelf()));
+        assertEquals("Request handled",libraryService.giveBookByPriority("Living Dangerously", Library.getBookShelf()));
     }
 
 
     @Test
     void giveBookByOrder() {
-        assertNotNull(libraryService.giveBookByOrder("Dangerously", Library.getBookShelf()));
+        assertEquals("Request handled",libraryService.giveBookByOrder("Dangerously", Library.getBookShelf()));
     }
 }

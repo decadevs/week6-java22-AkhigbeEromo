@@ -27,7 +27,7 @@ public class LibraryServiceImpl implements LibraryService {
 
     @Override
     public String giveBookByPriority(String book, List<Book> books) {
-        Collections.sort(libraryUsersOnQueue, Comparator.comparing(Person::getRole));
+        libraryUsersOnQueue.sort(Comparator.comparing(Person::getRole));
         libraryUsersOnQueue.forEach(
                 p ->{
                     if(reduceBookCount(book, books).isPresent()){
@@ -37,7 +37,7 @@ public class LibraryServiceImpl implements LibraryService {
                     }
                 }
         );
-        return "Book has Successfully been given";
+        return "Request handled";
     }
 
     @Override
@@ -51,7 +51,7 @@ public class LibraryServiceImpl implements LibraryService {
                     }
                 }
         );
-        return "Book has Successfully been given";
+        return "Request handled";
     }
 
     @Override

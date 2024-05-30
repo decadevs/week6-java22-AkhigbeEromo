@@ -21,14 +21,14 @@ public class LibrarySystem {
         libraryService.addLibraryUsersToQueue(teacher);
         libraryService.addLibraryUsersToQueue(juniorStudent);
 
+        System.out.println("#####################################################");
+        System.out.println("GIVING BOOK BY ORDER");
+        libraryService.giveBookByOrder("the gods are mad", Library.getBookShelf());
 
         System.out.println("#####################################################");
         System.out.println("GIVING BOOK BY PRIORITY");
         libraryService.giveBookByPriority("Living Dangerously", Library.getBookShelf());
 
-        System.out.println("#####################################################");
-        System.out.println("GIVING BOOK BY ORDER");
-        libraryService.giveBookByOrder("the gods are mad", Library.getBookShelf());
 
         System.out.println("#####################################################");
         System.out.println("RETURN BOOK");

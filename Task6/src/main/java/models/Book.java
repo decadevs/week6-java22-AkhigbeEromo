@@ -19,13 +19,6 @@ public class Book {
         return name;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
 
     public int getNumberOfCopies() {
         return numberOfCopies;
@@ -34,9 +27,6 @@ public class Book {
         this.numberOfCopies =numberOfCopies;
     }
 
-    public int getYearPublished() {
-        return yearPublished;
-    }
 
     @Override
     public String toString() {
